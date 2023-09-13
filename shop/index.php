@@ -113,6 +113,37 @@
                 </div>
             </div>
         </section>
+
+        <section class="py-12 px-4">
+            <div>
+                <div class="flex items-end justify-between w-full">
+                    <h1 class="font-bebas font-bold text-5xl">
+                        OUR HAPPY <br>
+                        CUSTOMERS
+                    </h1>
+                    <div class="flex items-end gap-8">
+                        <i class="fa-solid fa-arrow-left text-3xl previous-btn"></i>
+                        <i class="fa-solid fa-arrow-right text-3xl next-btn"></i>
+                    </div>
+                </div>
+                <div class="mt-6 p-4 border border-gray-300 rounded-2xl flex flex-col items-start justify-between gap-4">
+                    <div class="flex flex-col items-start gap-2">
+                        <div class="customer-rating"></div>
+                        <div class="flex items-center gap-2">
+                            <h1 class="font-raleway font-semibold text-lg mt-1 customer-name">
+                                Sarah M.
+                            </h1>
+                            <span class="material-symbols-outlined text-green-400 text-md verification">
+                                verified
+                            </span>
+                        </div>
+                    </div>
+                    <p class="font-raleway opacity-60 text-sm customer-feedback">
+                        „I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.“
+                    </p>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 

@@ -15,5 +15,6 @@
 
     <script src="../assets/js/jquery-3.7.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <script src="https://kit.fontawesome.com/0870a55fea.js" crossorigin="anonymous"></script>
     <script src="../assets/js/app.js"></script>
 </head>

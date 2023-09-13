@@ -38,4 +38,32 @@ class Product extends Dbh
             echo "</div>";
         }
     }
+
+    private function get_customer_feedback(int $id)
+    {
+        $sql = "SELECT * FROM customer_feedback";
+        $stmt = $this->connect()->prepare($sql);
+
+        if (!$stmt->execute()) {
+            $stmt = null;
+            header("location: ../index.php");
+            exit();
+        }
+
+        $feedbacks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $feedbacks;
+    }
+
+    public function display_feedbacks(int $id)
+    {
+        $feedbacks = $this->get_customer_feedback($id);
+
+        foreach ($feedbacks as $feedback) {
+            $rating = $feedback["feedback_rating"];
+            $customer_name = $feedback["customer_name"];
+            $customer_verified = $feedback["customer_verified"];
+            $customer_feedback = $feedback["customer_feedback"];
+        }
+    }
 }

@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Ella Reynolds",
+        "feedback": "I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.",
+        "verified": true,
+        "feedback_rating": 2
+    },
+    {
+        "name": "Liam Anderson",
+        "feedback": "Shop.co is a hidden gem in the world of online fashion. The variety of clothing options, impeccable customer service, and quick delivery have made me a loyal customer.",
+        "verified": true,
+        "feedback_rating": 3
+    },
+    {
+        "name": "Ava Martinez",
+        "feedback": "I can't get enough of Shop.co! Their clothing not only looks amazing but feels comfortable too. It's become my go-to store for both everyday outfits and special occasions.",
+        "verified": false,
+        "feedback_rating": 4
+    },
+    {
+        "name": "Mason Turner",
+        "feedback": "Shop.co has a fantastic collection of clothing for all occasions. The prices are reasonable, and the quality is outstanding. I've recommended it to all my friends.",
+        "verified": true,
+        "feedback_rating": 4.5
+    },
+    {
+        "name": "Sophia White",
+        "feedback": "I recently discovered Shop.co, and I'm already obsessed. The trendy fashion choices, user-friendly website, and hassle-free returns have made shopping here a delight.",
+        "verified": false,
+        "feedback_rating": 5
+    }
+]
