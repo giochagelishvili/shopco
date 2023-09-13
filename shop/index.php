@@ -66,8 +66,28 @@
                     <?php
                     include("../classes/product.classes.php");
                     $product = new Product();
-                    $product->display_new_arrivals();
+                    $product->display_product("new_arrivals");
                     ?>
+                </div>
+
+                <div class="flex items-center my-6 px-6">
+                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300">View All</a>
+                </div>
+            </div>
+
+            <div class="w-[95vw] h-[1px] bg-gray-300 my-8 mx-auto"></div>
+
+            <div>
+                <h1 class="font-bebas text-6xl text-center mt-8 mb-4">TOP SELLING</h1>
+
+                <div class="flex items-center gap-4 overflow-x-scroll p-4">
+                    <?php
+                    $product->display_product("top_selling");
+                    ?>
+                </div>
+
+                <div class="flex items-center my-6 px-6">
+                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300">View All</a>
                 </div>
             </div>
         </section>
