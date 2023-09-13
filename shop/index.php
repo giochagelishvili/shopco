@@ -91,6 +91,28 @@
                 </div>
             </div>
         </section>
+        <section class="px-4">
+            <div class="w-full bg-gray-200 rounded-xl flex flex-col items-center justify-center gap-4 p-4">
+                <h1 class="font-bebas font-bold text-5xl">
+                    BROWSE BY <br>
+                    DRESS STYLE
+                </h1>
+                <div class="flex flex-col items-center justify-center gap-4">
+                    <a href="#">
+                        <img src="../uploads/dress_styles/casual.png" alt="photo of casual style">
+                    </a>
+                    <a href="#">
+                        <img src="../uploads/dress_styles/formal.png" alt="photo of formal style">
+                    </a>
+                    <a href="#">
+                        <img src="../uploads/dress_styles/party.png" alt="photo of party style">
+                    </a>
+                    <a href="#">
+                        <img src="../uploads/dress_styles/gym.png" alt="photo of gym style">
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 
