@@ -2,7 +2,8 @@
 module.exports = {
   content: [
     "./shop/**/*.{html,js,php}",
-    "./inc/**/*.{html,js,php}"
+    "./inc/**/*.{html,js,php}",
+    "./classes/**/*.{html,js,php}"
   ],
   theme: {
     fontFamily: {

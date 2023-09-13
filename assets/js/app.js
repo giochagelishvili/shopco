@@ -18,4 +18,13 @@ $(document).ready(function () {
             "overflow": "visible"
         })
     });
+
+    $(".rating-div").each(function () {
+        var rating = $(this).text();
+        $(this).rateYo({
+            rating: rating,
+            starWidth: "20px"
+        });
+        $(this).append(rating + "/5");
+    });
 });

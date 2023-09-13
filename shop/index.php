@@ -58,6 +58,19 @@
                 <img class=" h-5" src="../uploads/brands/calvin-klein.png" alt="calvin klein logo">
             </div>
         </section>
+        <section>
+            <div>
+                <h1 class="font-bebas text-6xl text-center mt-8 mb-4">NEW ARRIVALS</h1>
+
+                <div class="flex items-center gap-4 overflow-x-scroll p-4">
+                    <?php
+                    include("../classes/product.classes.php");
+                    $product = new Product();
+                    $product->display_new_arrivals();
+                    ?>
+                </div>
+            </div>
+        </section>
     </main>
 </body>
 

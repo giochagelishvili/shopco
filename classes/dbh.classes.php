@@ -1,34 +1,21 @@
 <?php
 
-if (!defined('DB_SERVER')) {
-    require_once("../initialize.php");
-}
-
 class Dbh
 {
-    private $host = DB_SERVER;
-    private $username = DB_USERNAME;
-    private $password = DB_PASSWORD;
-    private $database = DB_NAME;
 
-    public $conn;
-
-    public function __construct()
+    // Connects to the database
+    protected function connect()
     {
-
-        if (!isset($this->conn)) {
-
-            $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
-
-            if (!$this->conn) {
-                echo 'Cannot connect to database server';
-                exit;
-            }
+        try {
+            // Connect to the database
+            $username = "root";
+            $password = "";
+            $dbh = new PDO('mysql:host=localhost;dbname=shopco', $username, $password);
+            return $dbh;
+        } catch (PDOException $e) {
+            // Print out the error
+            print "Error!: " . $e->getMessage() . "<br />";
+            die();
         }
-    }
-
-    public function __destruct()
-    {
-        $this->conn->close();
     }
 }
