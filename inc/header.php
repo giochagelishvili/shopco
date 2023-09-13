@@ -19,7 +19,7 @@
             </span>
         </div>
     </div>
-    <div class="nav-menu bg-black text-white w-3/4 h-screen absolute top-0 right-full py-6 pl-8">
+    <div class="nav-menu bg-black text-white w-3/4 h-screen fixed top-0 right-full py-6 pl-8">
         <h1 class="font-bebas text-4xl tracking-widest">MENU</h1>
         <nav class="relative">
             <ul class="mt-5 text-xl">
