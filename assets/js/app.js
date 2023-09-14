@@ -71,17 +71,28 @@ $(document).ready(function () {
                 customerIndex = 0;
             }
 
-            $('.customer-rating').rateYo("option", "rating", data[index]["feedback_rating"]);
+            $('.customer-rating').fadeOut(400, function () {
+                $(this).rateYo("option", "rating", data[index]["feedback_rating"]);
+                $(this).fadeIn(400);
+            });
 
-            $('.customer-name').text(data[index]['name']);
+            $('.customer-name-container').fadeOut(400, function () {
+                if (data[index]['verified'] == true) {
+                    $('.verification').css('display', 'block');
+                } else {
+                    $('.verification').css('display', 'none');
+                }
 
-            if (data[index]['verified'] == true) {
-                $('.verification').css('display', 'block');
-            } else {
-                $('.verification').css('display', 'none');
-            }
+                $('.customer-name').text(data[index]['name']);
 
-            $('.customer-feedback').text(data[index]['feedback']);
+                $(this).fadeIn(400);
+            });
+
+            $('.customer-feedback').fadeOut(400, function () {
+                $(this).text(data[index]['feedback']);
+                $(this).fadeIn(400);
+            });
         });
     }
+
 });

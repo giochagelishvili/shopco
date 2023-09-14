@@ -129,9 +129,8 @@
                 <div class="mt-6 p-4 border border-gray-300 rounded-2xl flex flex-col items-start justify-between gap-4">
                     <div class="flex flex-col items-start gap-2">
                         <div class="customer-rating"></div>
-                        <div class="flex items-center gap-2">
+                        <div class="flex items-center gap-2 customer-name-container">
                             <h1 class="font-raleway font-semibold text-lg mt-1 customer-name">
-                                Sarah M.
                             </h1>
                             <span class="material-symbols-outlined text-green-400 text-md verification">
                                 verified
@@ -139,7 +138,6 @@
                         </div>
                     </div>
                     <p class="font-raleway opacity-60 text-sm customer-feedback">
-                        „I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations.“
                     </p>
                 </div>
             </div>
