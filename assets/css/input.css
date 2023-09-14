@@ -13,3 +13,7 @@
 .jq-ry-container {
     padding: 0 !important;
 }
+
+#email-input:focus {
+    outline: none !important;
+}
