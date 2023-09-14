@@ -21,13 +21,16 @@
                     THAT MATCHES <br>
                     YOUR STYLE.
                 </h1>
+
                 <p class="font-raleway text-xs opacity-80 mt-2">
                     Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
                 </p>
+
                 <div class="flex items-center my-6">
                     <a href="#" class="bg-black w-full font-raleway text-white text-center text-lg py-3 rounded-full">Shop Now</a>
                 </div>
             </div>
+
             <div class="flex flex-col items-center justify-center gap-6 px-10">
                 <div class="flex items-center justify-between w-full">
                     <div class="flex flex-col items-start justify-start">
@@ -42,14 +45,17 @@
                         <span class="font-raleway text-xs opacity-70">High-Quality Products</span>
                     </div>
                 </div>
+
                 <div class="flex flex-col items-start justify-start">
                     <span class="font-bebas text-4xl">30,000+</span>
                     <span class="font-raleway text-xs opacity-70">Happy Customers</span>
                 </div>
             </div>
+
             <div class="mt-6">
                 <img src="../uploads/hero.png" alt="girl and boy">
             </div>
+
             <div class="bg-black flex items-center justify-center gap-4 flex-wrap p-8">
                 <img class=" h-5" src="../uploads/brands/versace.png" alt="versace logo">
                 <img class=" h-6" src="../uploads/brands/zara.png" alt="zara logo">
@@ -58,15 +64,16 @@
                 <img class=" h-5" src="../uploads/brands/calvin-klein.png" alt="calvin klein logo">
             </div>
         </section>
+
         <section>
             <div>
                 <h1 class="font-bebas text-6xl text-center mt-8 mb-4">NEW ARRIVALS</h1>
 
                 <div class="flex items-center gap-4 overflow-x-scroll p-4">
                     <?php
-                    include("../classes/product.classes.php");
-                    $product = new Product();
-                    $product->display_product("new_arrivals");
+                    include("../classes/product.classes.php"); // Include product class
+                    $product = new Product(); // Instantiate new Product object
+                    $product->display_product("new_arrivals"); // Display products from new_arrivals table
                     ?>
                 </div>
 
@@ -75,6 +82,7 @@
                 </div>
             </div>
 
+            <!-- Divider -->
             <div class="w-[95vw] h-[1px] bg-gray-300 my-8 mx-auto"></div>
 
             <div>
@@ -82,7 +90,7 @@
 
                 <div class="flex items-center gap-4 overflow-x-scroll p-4">
                     <?php
-                    $product->display_product("top_selling");
+                    $product->display_product("top_selling"); // Display products from top_selling table
                     ?>
                 </div>
 
@@ -91,12 +99,14 @@
                 </div>
             </div>
         </section>
+
         <section class="px-4">
             <div class="w-full bg-gray-200 rounded-xl flex flex-col items-center justify-center gap-4 p-4">
                 <h1 class="font-bebas font-bold text-5xl">
                     BROWSE BY <br>
                     DRESS STYLE
                 </h1>
+
                 <div class="flex flex-col items-center justify-center gap-4">
                     <a href="#">
                         <img src="../uploads/dress_styles/casual.png" alt="photo of casual style">
@@ -115,31 +125,46 @@
         </section>
 
         <section class="py-12 px-4">
+            <!-- Customer feedback container -->
             <div>
+                <!-- Navigation container -->
                 <div class="flex items-end justify-between w-full">
                     <h1 class="font-bebas font-bold text-5xl">
                         OUR HAPPY <br>
                         CUSTOMERS
                     </h1>
+
                     <div class="flex items-end gap-8">
                         <i class="fa-solid fa-arrow-left text-3xl previous-btn"></i>
                         <i class="fa-solid fa-arrow-right text-3xl next-btn"></i>
                     </div>
                 </div>
+
+                <!-- Feedback container -->
                 <div class="mt-6 p-4 border border-gray-300 rounded-2xl flex flex-col items-start justify-between gap-4">
+                    <!-- Rating and name container -->
                     <div class="flex flex-col items-start gap-2">
+                        <!-- Customer's given rating goes here -->
                         <div class="customer-rating"></div>
+
+                        <!-- Customer's name and verification icon goes here -->
                         <div class="flex items-center gap-2 customer-name-container">
-                            <h1 class="font-raleway font-semibold text-lg mt-1 customer-name">
-                            </h1>
-                            <span class="material-symbols-outlined text-green-400 text-md verification">
-                                verified
-                            </span>
+                            <!-- Customer's name -->
+                            <h1 class="font-raleway font-semibold text-lg mt-1 customer-name"></h1>
+
+                            <!-- Verification icon -->
+                            <span class="material-symbols-outlined text-green-400 text-md verification">verified</span>
                         </div>
                     </div>
-                    <p class="font-raleway opacity-60 text-sm customer-feedback">
-                    </p>
+
+                    <!-- Customer's feedback message goes here -->
+                    <p class="font-raleway opacity-60 text-sm customer-feedback"></p>
                 </div>
+            </div>
+
+            <!-- Subscription container -->
+            <div>
+
             </div>
         </section>
     </main>
