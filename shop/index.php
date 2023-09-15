@@ -89,13 +89,13 @@
                     ?>
                 </div>
 
-                <div class="flex items-center my-6 px-6">
+                <div class="flex items-center my-6 px-6 xl:px-28">
                     <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300">View All</a>
                 </div>
             </div>
 
             <!-- Divider -->
-            <div class="w-[95vw] h-[1px] bg-gray-300 my-8 mx-auto"></div>
+            <div class="w-[95vw] h-[1px] bg-gray-300 my-8 mx-auto xl:w-[85vw]"></div>
 
             <div>
                 <h1 class="font-bebas text-6xl text-center mt-8 mb-4">TOP SELLING</h1>
@@ -106,20 +106,20 @@
                     ?>
                 </div>
 
-                <div class="flex items-center my-6 px-6">
+                <div class="flex items-center my-6 px-6 xl:px-28">
                     <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300">View All</a>
                 </div>
             </div>
         </section>
 
-        <section class="px-4">
-            <div class="w-full bg-gray-200 rounded-xl flex flex-col items-center justify-center gap-4 p-4">
-                <h1 class="font-bebas font-bold text-5xl">
-                    BROWSE BY <br>
+        <section class="px-4 xl:px-24">
+            <div class="w-full bg-gray-200 rounded-xl flex flex-col items-center justify-center gap-4 p-4 xl:p-8">
+                <h1 class="font-bebas font-bold text-5xl xl:text-7xl xl:tracking-widest">
+                    BROWSE BY <br class="xl:hidden">
                     DRESS STYLE
                 </h1>
 
-                <div class="flex flex-col items-center justify-center gap-4">
+                <div class="flex flex-col items-center justify-center gap-4 xl:hidden">
                     <a href="#">
                         <img src="../uploads/dress_styles/casual.png" alt="photo of casual style">
                     </a>
@@ -132,6 +132,26 @@
                     <a href="#">
                         <img src="../uploads/dress_styles/gym.png" alt="photo of gym style">
                     </a>
+                </div>
+
+                <div class="hidden xl:flex xl:flex-col xl:items-center xl:justify-center xl:gap-8 xl:px-24">
+                    <div class="flex items-center justify-center gap-8">
+                        <a href="#">
+                            <img src="../uploads/dress_styles/casual-desktop.png" alt="photo of casual style">
+                        </a>
+                        <a href="#">
+                            <img src="../uploads/dress_styles/formal-desktop.png" alt="photo of formal style"">
+                        </a>
+                    </div>
+
+                    <div class=" flex items-center justify-center gap-8">
+                            <a href="#">
+                                <img src="../uploads/dress_styles/party-desktop.png" alt="photo of party style">
+                            </a>
+                            <a href="#">
+                                <img src="../uploads/dress_styles/gym-desktop.png" alt="photo of gym style">
+                            </a>
+                    </div>
                 </div>
             </div>
         </section>
