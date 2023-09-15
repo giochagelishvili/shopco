@@ -4,15 +4,17 @@
             <span class="material-symbols-outlined text-4xl menu-btn xl:hidden">
                 menu
             </span>
-            <h1 class="font-bebas text-3xl mt-1 xl:text-5xl">SHOP.CO</h1>
+            <a href="../index.php">
+                <h1 class="font-bebas text-3xl mt-1 xl:text-5xl">SHOP.CO</h1>
+            </a>
 
             <div class="hidden xl:block">
                 <nav class="h-full">
                     <ul class="flex items-center justify-between gap-12 text-xl font-raleway">
-                        <li><a href="#">Shop</a></li>
-                        <li><a href="#">On Sale</a></li>
-                        <li><a href="#">New Arrivals</a></li>
-                        <li><a href="#">Brands</a></li>
+                        <li><a class="nav-link" href="#">Shop</a></li>
+                        <li><a class="nav-link" href="#">On Sale</a></li>
+                        <li><a class="nav-link" href="#">New Arrivals</a></li>
+                        <li><a class="nav-link" href="#">Brands</a></li>
                     </ul>
                 </nav>
             </div>
@@ -30,13 +32,17 @@
                 <input type="text" name="search-bar" id="search-bar" placeholder="Search for products..." class="bg-transparent w-full" />
             </div>
 
-            <span class="material-symbols-outlined text-3xl">
-                shopping_cart
-            </span>
+            <a href="#" class="transition-colors hover:text-green-600">
+                <span class="material-symbols-outlined text-3xl">
+                    shopping_cart
+                </span>
+            </a>
 
-            <span class="material-symbols-outlined text-3xl">
-                account_circle
-            </span>
+            <a href="#" class="transition-colors hover:text-green-600">
+                <span class="material-symbols-outlined text-3xl">
+                    account_circle
+                </span>
+            </a>
         </div>
     </div>
 

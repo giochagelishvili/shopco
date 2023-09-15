@@ -6,9 +6,9 @@
                     We have clothes that suits your style and which you’re proud to wear. From women to men.
                 </p>
                 <div class="my-6 flex items-strech gap-6 text-3xl xl:mt-8">
-                    <i class="fa-brands fa-x-twitter"></i>
-                    <i class="fa-brands fa-facebook-f"></i>
-                    <i class="fa-brands fa-instagram"></i>
+                    <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
                 </div>
             </div>
 

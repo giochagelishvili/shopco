@@ -29,7 +29,7 @@
                         </p>
 
                         <div class="flex items-center my-6">
-                            <a href="#" class="bg-black w-full font-raleway text-white text-center text-lg py-3 rounded-full xl:w-56">Shop Now</a>
+                            <a href="#" class="bg-black border border-black w-full font-raleway text-white text-center text-lg py-3 rounded-full xl:w-56 transition-all hover:bg-white hover:text-black">Shop Now</a>
                         </div>
                     </div>
 
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="flex items-center my-6 px-6 xl:px-28">
-                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300">View All</a>
+                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300 transition-all hover:border-black hover:bg-black hover:text-white">View All</a>
                 </div>
             </div>
 
@@ -107,7 +107,7 @@
                 </div>
 
                 <div class="flex items-center my-6 px-6 xl:px-28">
-                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300">View All</a>
+                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300 transition-all hover:border-black hover:bg-black hover:text-white">View All</a>
                 </div>
             </div>
         </section>
@@ -136,19 +136,19 @@
 
                 <div class="hidden xl:flex xl:flex-col xl:items-center xl:justify-center xl:gap-8 xl:px-24">
                     <div class="flex items-center justify-center gap-8">
-                        <a href="#">
+                        <a href="#" class="transition-all hover:scale-105 hover:shadow-md rounded-3xl">
                             <img src="../uploads/dress_styles/casual-desktop.png" alt="photo of casual style">
                         </a>
-                        <a href="#">
+                        <a href="#" class="transition-all hover:scale-105 hover:shadow-md rounded-3xl">
                             <img src="../uploads/dress_styles/formal-desktop.png" alt="photo of formal style"">
                         </a>
                     </div>
 
                     <div class=" flex items-center justify-center gap-8">
-                            <a href="#">
+                            <a href="#" class="transition-all hover:scale-105 hover:shadow-md rounded-3xl">
                                 <img src="../uploads/dress_styles/party-desktop.png" alt="photo of party style">
                             </a>
-                            <a href="#">
+                            <a href="#" class="transition-all hover:scale-105 hover:shadow-md rounded-3xl">
                                 <img src="../uploads/dress_styles/gym-desktop.png" alt="photo of gym style">
                             </a>
                     </div>
@@ -167,8 +167,8 @@
                     </h1>
 
                     <div class="flex items-end gap-8">
-                        <i class="fa-solid fa-arrow-left text-3xl previous-btn"></i>
-                        <i class="fa-solid fa-arrow-right text-3xl next-btn"></i>
+                        <i class="fa-solid fa-arrow-left text-3xl previous-btn cursor-pointer"></i>
+                        <i class="fa-solid fa-arrow-right text-3xl next-btn cursor-pointer"></i>
                     </div>
                 </div>
 
@@ -210,7 +210,7 @@
                         <input type="email" name="email-input" id="email-input" placeholder="Enter your email address" class="p-3" />
                     </div>
                     <div class="flex items-center">
-                        <button type="submit" class="w-full font-raleway font-semibold text-center text-md py-3 rounded-full bg-white mt-4">Subscribe to newsletter</button>
+                        <button type="submit" class="w-full font-raleway font-semibold text-center text-md py-3 rounded-full bg-white mt-4 transition-all hover:text-white hover:bg-green-600">Subscribe to newsletter</button>
                     </div>
                 </form>
             </div>

@@ -40,7 +40,7 @@ class Product extends Dbh
             $product_price = $product["product_price"]; // Product price in float value (e.g. 120, 118.5)
 
             // Product container div
-            echo "<div class='flex-shrink-0 w-3/5 product-container xl:flex-shrink'>";
+            echo "<div class='flex-shrink-0 w-3/5 product-container xl:flex-shrink transition-all hover:scale-105 cursor-pointer'>";
             echo "<img src='../uploads/$table/$product_img' alt='product image'>"; // Product image
             echo "<h1 class='font-raleway font-semibold mt-2'>$product_name</h1>"; // Product name
             echo "<div class='rating-div flex items-center gap-1'>$product_rating</div>"; // Product rating
