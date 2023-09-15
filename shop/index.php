@@ -156,11 +156,11 @@
             </div>
         </section>
 
-        <section class="py-12 px-4">
+        <section class="py-12 px-4 xl:flex xl:items-start xl:justify-around">
             <!-- Customer feedback container -->
-            <div>
+            <div class="xl:flex-col xl:items-start xl:w-1/3">
                 <!-- Navigation container -->
-                <div class="flex items-end justify-between w-full">
+                <div class="flex items-end justify-between w-full xl:w-auto">
                     <h1 class="font-bebas font-bold text-5xl">
                         OUR HAPPY <br>
                         CUSTOMERS
@@ -195,7 +195,7 @@
             </div>
 
             <!-- Subscription container -->
-            <div class="bg-black mt-12 flex flex-col items-center justify-center gap-4 p-8 rounded-3xl">
+            <div class="bg-black mt-12 flex flex-col items-center justify-center gap-4 p-8 rounded-3xl xl:m-0 xl:w-1/3">
                 <h1 class="font-bebas font-semibold text-white text-5xl ">
                     STAY UP TO DATE <br>
                     ABOUT OUR <br>
