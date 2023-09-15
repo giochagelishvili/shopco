@@ -68,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="bg-black flex items-center justify-center gap-4 flex-wrap p-8">
+            <div class="bg-black flex items-center justify-center gap-4 flex-wrap p-8 xl:justify-evenly">
                 <img class=" h-5" src="../uploads/brands/versace.png" alt="versace logo">
                 <img class=" h-6" src="../uploads/brands/zara.png" alt="zara logo">
                 <img class=" h-6" src="../uploads/brands/gucci.png" alt="gucci logo">
@@ -81,7 +81,7 @@
             <div>
                 <h1 class="font-bebas text-6xl text-center mt-8 mb-4">NEW ARRIVALS</h1>
 
-                <div class="flex items-center gap-4 overflow-x-scroll p-4">
+                <div class="flex items-center gap-4 overflow-x-scroll p-4 xl:px-28 xl:gap-24 xl:overflow-hidden">
                     <?php
                     include("../classes/product.classes.php"); // Include product class
                     $product = new Product(); // Instantiate new Product object
@@ -100,7 +100,7 @@
             <div>
                 <h1 class="font-bebas text-6xl text-center mt-8 mb-4">TOP SELLING</h1>
 
-                <div class="flex items-center gap-4 overflow-x-scroll p-4">
+                <div class="flex items-center gap-4 overflow-x-scroll p-4 xl:px-28 xl:gap-24 xl:overflow-hidden">
                     <?php
                     $product->display_product("top_selling"); // Display products from top_selling table
                     ?>
