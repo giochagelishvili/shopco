@@ -15,45 +15,57 @@
 
     <main>
         <section class="bg-[#F2F0F1]">
-            <div class="py-8 px-6 w-full">
-                <h1 class=" text-6xl font-bebas">
-                    FIND CLOTHES <br>
-                    THAT MATCHES <br>
-                    YOUR STYLE.
-                </h1>
+            <div class="xl:grid xl:grid-cols-2">
+                <div class="xl:pl-28 xl:py-8">
+                    <div class="py-8 px-8 w-full">
+                        <h1 class=" text-6xl font-bebas xl:font-bold xl:text-7xl">
+                            FIND CLOTHES <br>
+                            THAT MATCHES <br>
+                            YOUR STYLE.
+                        </h1>
 
-                <p class="font-raleway text-xs opacity-80 mt-2">
-                    Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
-                </p>
+                        <p class="font-raleway text-xs opacity-80 mt-2 xl:text-lg xl:w-full">
+                            Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.
+                        </p>
 
-                <div class="flex items-center my-6">
-                    <a href="#" class="bg-black w-full font-raleway text-white text-center text-lg py-3 rounded-full">Shop Now</a>
-                </div>
-            </div>
-
-            <div class="flex flex-col items-center justify-center gap-6 px-10">
-                <div class="flex items-center justify-between w-full">
-                    <div class="flex flex-col items-start justify-start">
-                        <span class="font-bebas text-4xl">200+</span>
-                        <span class="font-raleway text-xs opacity-70">International Brands</span>
+                        <div class="flex items-center my-6">
+                            <a href="#" class="bg-black w-full font-raleway text-white text-center text-lg py-3 rounded-full xl:w-56">Shop Now</a>
+                        </div>
                     </div>
 
-                    <div class="w-[1px] h-16 bg-gray-400"></div>
+                    <div class="flex flex-col items-center justify-center gap-6 px-10 xl:flex-row xl:justify-start">
+                        <div class="flex items-center justify-between w-full xl:justify-between xl:w-2/3">
+                            <div class="flex flex-col items-start justify-start">
+                                <span class="font-bebas text-4xl">200+</span>
+                                <span class="font-raleway text-xs opacity-70">International Brands</span>
+                            </div>
 
-                    <div class="flex flex-col items-start justify-start">
-                        <span class="font-bebas text-4xl">2,000+</span>
-                        <span class="font-raleway text-xs opacity-70">High-Quality Products</span>
+                            <div class="w-[1px] h-16 bg-gray-400"></div>
+
+                            <div class="flex flex-col items-start justify-start">
+                                <span class="font-bebas text-4xl">2,000+</span>
+                                <span class="font-raleway text-xs opacity-70">High-Quality Products</span>
+                            </div>
+
+                            <div class="w-[1px] h-16 bg-gray-400 hidden xl:block"></div>
+
+                            <div class="flex-col items-start justify-start hidden xl:flex">
+                                <span class="font-bebas text-4xl">30,000+</span>
+                                <span class="font-raleway text-xs opacity-70">Happy Customers</span>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col items-start justify-start xl:hidden">
+                            <span class="font-bebas text-4xl">30,000+</span>
+                            <span class="font-raleway text-xs opacity-70">Happy Customers</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="flex flex-col items-start justify-start">
-                    <span class="font-bebas text-4xl">30,000+</span>
-                    <span class="font-raleway text-xs opacity-70">Happy Customers</span>
+                <div class="mt-6 w-full xl:flex xl:items-end xl:justify-center">
+                    <img src="../uploads/hero.png" alt="girl and boy" class="xl:hidden">
+                    <img src="../uploads/hero-desktop.png" alt="girl and boy" class="hidden xl:block xl:w-2/3">
                 </div>
-            </div>
-
-            <div class="mt-6">
-                <img src="../uploads/hero.png" alt="girl and boy">
             </div>
 
             <div class="bg-black flex items-center justify-center gap-4 flex-wrap p-8">
