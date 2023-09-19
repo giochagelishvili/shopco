@@ -85,7 +85,7 @@
                     <?php
                     include("../classes/product.classes.php"); // Include product class
                     $product = new Product(); // Instantiate new Product object
-                    $product->display_product("new_arrivals"); // Display products from new_arrivals table
+                    $product->display_product("new_arrivals", true); // Display products from new_arrivals table
                     ?>
                 </div>
 
@@ -102,7 +102,7 @@
 
                 <div class="flex items-center gap-4 overflow-x-scroll p-4 xl:px-28 xl:gap-24 xl:overflow-hidden">
                     <?php
-                    $product->display_product("top_selling"); // Display products from top_selling table
+                    $product->display_product("top_selling", true); // Display products from top_selling table
                     ?>
                 </div>
 

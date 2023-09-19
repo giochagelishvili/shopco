@@ -4,16 +4,16 @@
             <span class="material-symbols-outlined text-4xl menu-btn xl:hidden">
                 menu
             </span>
-            <a href="../index.php">
+            <a href="/shopco">
                 <h1 class="font-bebas text-3xl mt-1 xl:text-5xl">SHOP.CO</h1>
             </a>
 
             <div class="hidden xl:block">
                 <nav class="h-full">
                     <ul class="flex items-center justify-between gap-12 text-xl font-raleway">
-                        <li><a class="nav-link" href="#">Shop</a></li>
+                        <li><a class="nav-link" href="/shopco/shop/products">Shop</a></li>
                         <li><a class="nav-link" href="#">On Sale</a></li>
-                        <li><a class="nav-link" href="#">New Arrivals</a></li>
+                        <li><a class="nav-link" href="/shopco/shop/products?category=new_arrivals">New Arrivals</a></li>
                         <li><a class="nav-link" href="#">Brands</a></li>
                     </ul>
                 </nav>

@@ -63,7 +63,7 @@ $(document).ready(function () {
     // Fetchs data from JSON file according to given index and displays it on the page
     function updateFeedback(index) {
         // Get data from feedbacks JSON file
-        $.getJSON('../assets/js/feedbacks.json', function (data) {
+        $.getJSON('assets/js/feedbacks.json', function (data) {
             // Get length of array
             var length = data.length;
 

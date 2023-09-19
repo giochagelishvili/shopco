@@ -1,3 +1,15 @@
+<?php
+
+if (file_exists("../assets")) {
+    $root = "../";
+} else if (file_exists("../../assets")) {
+    $root = "../../";
+} else {
+    redirect("shop");
+}
+
+?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,7 +18,7 @@
     <title>SHOP.CO</title>
 
     <!-- jQuery -->
-    <script src="../assets/js/jquery-3.7.1.js"></script>
+    <script src=<?php echo $root . "assets/js/jquery-3.7.1.js" ?>></script>
 
     <!-- Google fonts / Import Bebas Neue and Raleway fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,8 +34,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="../dist/output.css">
+    <link rel="stylesheet" href=<?php echo $root . "/dist/output.css" ?>>
 
     <!-- custom JS -->
-    <script src="../assets/js/app.js"></script>
+    <script src=<?php echo $root . "assets/js/app.js" ?>></script>
 </head>
