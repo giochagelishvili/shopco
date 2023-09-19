@@ -60,10 +60,60 @@ $(document).ready(function () {
         updateFeedback(customerIndex);
     });
 
+    var limit = 10;
+
+    $('.show-more-btn').on('click', function () {
+        limit += 10;
+
+        // Get the current URL
+        var currentURL = window.location.href;
+
+        // Parse the query string
+        var queryString = currentURL.split('?')[1];
+
+        // Initialize a variable to store the category value
+        var category = null;
+
+        // Check if there is a query string
+        if (queryString) {
+            // Split the query string into key-value pairs
+            var params = queryString.split('&');
+
+            // Loop through the key-value pairs
+            for (var i = 0; i < params.length; i++) {
+                var param = params[i].split('=');
+
+                // Check if the key is 'category'
+                if (param[0] === 'category') {
+                    // Decode the value and assign it to the 'category' variable
+                    category = decodeURIComponent(param[1]);
+                    break; // Exit the loop since we found the 'category' parameter
+                }
+            }
+        }
+
+        $('.products-container').load('../../inc/products.controller.php', { limit: limit, category: category }, function () {
+            // Iterate over rating divs
+            $(".rating-div").each(function () {
+                // Rating in float value (e.g. 4.5)
+                var rating = $(this).text();
+
+                // Use rateYo to display rating
+                $(this).rateYo({
+                    rating: rating,
+                    starWidth: "20px"
+                });
+
+                // Display rating in numbers (e.g. 4.5/5)
+                $(this).append(rating + "/5");
+            });
+        });
+    });
+
     // Fetchs data from JSON file according to given index and displays it on the page
     function updateFeedback(index) {
         // Get data from feedbacks JSON file
-        $.getJSON('assets/js/feedbacks.json', function (data) {
+        $.getJSON('/shopco/assets/js/feedbacks.json', function (data) {
             // Get length of array
             var length = data.length;
 

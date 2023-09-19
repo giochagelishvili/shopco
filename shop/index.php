@@ -85,12 +85,12 @@
                     <?php
                     include("../classes/product.classes.php"); // Include product class
                     $product = new Product(); // Instantiate new Product object
-                    $product->display_product("new_arrivals", true); // Display products from new_arrivals table
+                    $product->display_product("new_arrivals", true, 5); // Display products from new_arrivals table
                     ?>
                 </div>
 
                 <div class="flex items-center my-6 px-6 xl:px-28">
-                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300 transition-all hover:border-black hover:bg-black hover:text-white">View All</a>
+                    <a href="/shopco/shop/products/?category=new_arrivals" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300 transition-all hover:border-black hover:bg-black hover:text-white">View All</a>
                 </div>
             </div>
 
@@ -102,12 +102,12 @@
 
                 <div class="flex items-center gap-4 overflow-x-scroll p-4 xl:px-28 xl:gap-24 xl:overflow-hidden">
                     <?php
-                    $product->display_product("top_selling", true); // Display products from top_selling table
+                    $product->display_product("top_selling", true, 5); // Display products from top_selling table
                     ?>
                 </div>
 
                 <div class="flex items-center my-6 px-6 xl:px-28">
-                    <a href="#" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300 transition-all hover:border-black hover:bg-black hover:text-white">View All</a>
+                    <a href="/shopco/shop/products/?category=top_selling" class="w-full font-raleway font-semibold text-center text-lg py-3 rounded-full border border-gray-300 transition-all hover:border-black hover:bg-black hover:text-white">View All</a>
                 </div>
             </div>
         </section>
