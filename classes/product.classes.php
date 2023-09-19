@@ -103,7 +103,7 @@ class Product extends Dbh
         }
     }
 
-    public function breadcrumbs()
+    public function breadcrumbs(array $crumbs = [])
     {
         // Get the current URL
         $currentURL = $_SERVER['REQUEST_URI'];
@@ -135,6 +135,7 @@ class Product extends Dbh
                 continue;
             }
 
+
             $breadcrumbTrail .= ' > <a href="/shopco/shop/' . $segment . '">' . ucfirst($segment) . '</a>';
 
             $lastSegment = $segment;
@@ -147,6 +148,10 @@ class Product extends Dbh
         if (isset($_GET['category'])) {
             $category = $_GET['category'];
             $breadcrumbTrail .= ' > <a href="/shopco/shop/products?category=' . $category . '">' . ucwords(str_replace('_', ' ', $category)) . '</a>';
+        }
+
+        foreach ($crumbs as $crumb) {
+            $breadcrumbTrail .= ' > <a href="/shopco/shop/products?category=' . $crumb . '">' . ucfirst($crumb) . '</a>';
         }
 
         return [$breadcrumbTrail, $lastSegment];
