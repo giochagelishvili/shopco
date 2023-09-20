@@ -45,6 +45,9 @@ if (!isset($_GET['id'])) {
                     $listing = $product[0]['listing']; // Product listing (New arrivals, top selling etc.)
                     $colors = explode('/', $product[0]['colors']); // Product colors
                     $sizes = explode('/', $product[0]['sizes']); // Product sizes
+
+                    // Get product details
+                    $product_details = $product_obj->get_product_details($id);
                 }
                 ?>
 
@@ -155,6 +158,67 @@ if (!isset($_GET['id'])) {
                         <div class="w-full">
                             <!-- Add to Cart button -->
                             <button class='bg-black text-white py-3 w-full rounded-full font-raleway size-btn'>Add to Cart</button>
+                        </div>
+                    </div>
+
+                    <!-- Divider line -->
+                    <hr class="my-6">
+
+                    <!-- This div contains product details -->
+                    <div class="flex flex-col items-start gap-6">
+                        <h2 class="font-ralway opacity-70">Product details</h2>
+
+                        <!-- Product details container -->
+                        <div class="flex flex-col items-start gap-4 pl-3">
+                            <!-- Product detail container -->
+                            <div class="flex items-center gap-4">
+                                <img class="w-8" src="/shopco/uploads/icons/wash.png" alt="machine wash icon">
+                                <p class="font-raleway text-sm">
+                                    <?php echo $product_details[0]['wash'] ?>
+                                </p>
+                            </div>
+
+                            <!-- Product detail container -->
+                            <div class="flex items-center gap-4">
+                                <img class="w-8" src="/shopco/uploads/icons/bleach.png" alt="machine bleach icon">
+                                <p class="font-raleway text-sm">
+                                    <?php echo $product_details[0]['bleach'] ?>
+                                </p>
+                            </div>
+
+                            <!-- Product detail container -->
+                            <div class="flex items-center gap-4">
+                                <img class="w-8" src="/shopco/uploads/icons/iron.png" alt="machine iron icon">
+                                <p class="font-raleway text-sm">
+                                    <?php echo $product_details[0]['iron'] ?>
+                                </p>
+                            </div>
+
+                            <!-- Product detail container -->
+                            <div class="flex items-center gap-4">
+                                <img class="w-8" src="/shopco/uploads/icons/tumble-dry.png" alt="machine tumble-dry icon">
+                                <p class="font-raleway text-sm">
+                                    <?php echo $product_details[0]['dry'] ?>
+                                </p>
+                            </div>
+
+                            <!-- Product detail container -->
+                            <div class="flex items-center gap-4">
+                                <img class="w-8" src="/shopco/uploads/icons/dry-clean.png" alt="machine dry-clean icon">
+                                <p class="font-raleway text-sm">
+                                    <?php echo $product_details[0]['clean'] ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divider line -->
+                    <hr class="my-6">
+
+                    <!-- This div contains similar items -->
+                    <div>
+                        <div>
+                            <h1 class="font-bebas font-bold text-5xl text-center">YOU MIGHT ALSO LIKE</h1>
                         </div>
                     </div>
                 </div>

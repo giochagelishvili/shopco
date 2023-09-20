@@ -163,4 +163,22 @@ class Product extends Dbh
 
         return [$breadcrumbTrail, $lastSegment];
     }
+
+    public function get_product_details($product_id)
+    {
+        // Create and prepare SQL query
+        $sql = "SELECT * FROM product_details WHERE product_id = ?";
+        $stmt = $this->connect()->prepare($sql);
+
+        // Execute query
+        if (!$stmt->execute([$product_id])) {
+            $stmt = null;
+            header("location: ../index.php");
+            exit();
+        }
+
+        $product_details = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $product_details;
+    }
 }
