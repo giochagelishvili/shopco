@@ -1,4 +1,4 @@
-<header>
+<header class="box-border ">
     <div class="flex items-center justify-between py-3 px-6">
         <div class="flex items-center gap-4 xl:gap-28">
             <span class="material-symbols-outlined text-4xl menu-btn xl:hidden">
@@ -62,14 +62,14 @@
         </span>
     </div>
 
-    <div class="hidden w-screen h-screen absolute z-50 top-0 left-0 bg-[#000000aa] user-form">
-        <div class="flex items-center justify-center w-screen h-screen">
-            <div class="w-3/4 bg-white p-6 rounded-2xl form-container">
-                <div class="login-form">
+    <div class="hidden w-screen h-screen absolute z-50 top-0 left-0 bg-[#000000aa] user-form  box-border">
+        <div class="flex items-center justify-center w-full h-full box-border ">
+            <div class="w-3/4 bg-white p-6 rounded-2xl form-container xl:flex xl:items-start xl:justify-between xl:p-0 overflow-hidden ">
+                <div class="login-form xl:w-1/2 xl:p-6 xl:flex xl:flex-col xl:items-center ">
                     <h1 class="font-bebas font-semibold text-3xl text-center tracking-widest">
                         Please Log In
                     </h1>
-                    <form class="w-full mt-4" action="">
+                    <form class="w-full mt-4 xl:w-2/3 " action="">
                         <div class="flex flex-col items-center gap-3">
                             <div class="flex items-center w-full gap-2 border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                                 <span class="material-symbols-outlined">
@@ -86,7 +86,7 @@
                         </div>
                         <button type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold mt-4">Log In</button>
                     </form>
-                    <div class="mt-4 flex flex-col items-center">
+                    <div class="mt-4 flex flex-col items-center xl:hidden">
                         <h2 class="font-raleway text-center text-lg">
                             Not a member yet?
                         </h2>
@@ -94,11 +94,11 @@
                     </div>
                 </div>
 
-                <div class="sign-up-form hidden">
-                    <h1 class="font-bebas font-semibold text-3xl text-center tracking-widest">
+                <div class="sign-up-form hidden xl:w-1/2 xl:bg-black xl:p-6 xl:flex xl:flex-col xl:items-center ">
+                    <h1 class="font-bebas font-semibold text-3xl text-center tracking-widest xl:text-white">
                         Register for FREE
                     </h1>
-                    <form class="w-full mt-4" action="">
+                    <form class="w-full mt-4 xl:w-2/3 " action="">
                         <div class="flex flex-col items-center gap-3">
                             <input required type="text" name="" id="" placeholder="First Name" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                             <input required type="text" name="" id="" placeholder="Last Name" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
@@ -106,9 +106,9 @@
                             <input required type="password" name="" id="" placeholder="Password" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                             <input required type="password" name="" id="" placeholder="Confirm Password" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                         </div>
-                        <button type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold mt-4">Sign Up</button>
+                        <button type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold mt-4 xl:bg-white xl:text-black">Sign Up</button>
                     </form>
-                    <div class="mt-4 flex flex-col items-center">
+                    <div class="mt-4 flex flex-col items-center xl:hidden">
                         <h2 class="font-raleway text-center text-lg">
                             Already Registered?
                         </h2>

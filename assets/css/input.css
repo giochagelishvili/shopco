@@ -47,3 +47,7 @@ input:focus {
     background: #000000 !important;
     color: #FFFFFF !important;
 }
+
+body {
+    overflow-x: hidden;
+}

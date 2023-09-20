@@ -173,6 +173,11 @@ $(document).ready(function () {
     $('.account-btn').on('click', function (event) {
         event.stopPropagation(); // Stop event propagation
         $('.user-form').fadeIn(150);
+        $('body').css({
+            width: '100vw',
+            height: '100vh',
+            overflow: 'hidden'
+        })
         formVisible = true;
     });
 
@@ -191,7 +196,13 @@ $(document).ready(function () {
     // Handle clicks outside of the .form-container
     $(document).on('click', function (event) {
         if (formVisible && !$(event.target).closest('.form-container').length) {
-            $('.user-form').fadeOut(150);
+            $('.user-form').fadeOut(150, function () {
+                $('body').css({
+                    width: 'auto',
+                    height: 'auto',
+                    overflow: 'visible'
+                });
+            });
             formVisible = false;
         }
     });
