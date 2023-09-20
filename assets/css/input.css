@@ -36,5 +36,10 @@
 
 .nav-link:hover::after {
     width: 100%;
-    //transition: width .3s;
+    transition: width .3s;
+}
+
+/* Hide the scrollbar but allow scrolling for Webkit-based browsers */
+.secondary-images-container::-webkit-scrollbar {
+    width: 0;
 }
