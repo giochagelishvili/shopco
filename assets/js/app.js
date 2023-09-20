@@ -168,6 +168,34 @@ $(document).ready(function () {
         $('.quantity').text(quantity);
     });
 
+    var formVisible = false;
+
+    $('.account-btn').on('click', function (event) {
+        event.stopPropagation(); // Stop event propagation
+        $('.user-form').fadeIn(150);
+        formVisible = true;
+    });
+
+    $('.register-btn').on('click', function () {
+        $('.login-form').fadeOut(150, function () {
+            $('.sign-up-form').fadeIn(150);
+        });
+    });
+
+    $('.login-btn').on('click', function () {
+        $('.sign-up-form').fadeOut(150, function () {
+            $('.login-form').fadeIn(150);
+        });
+    });
+
+    // Handle clicks outside of the .form-container
+    $(document).on('click', function (event) {
+        if (formVisible && !$(event.target).closest('.form-container').length) {
+            $('.user-form').fadeOut(150);
+            formVisible = false;
+        }
+    });
+
     // Fetchs data from JSON file according to given index and displays it on the page
     function updateFeedback(index) {
         // Get data from feedbacks JSON file

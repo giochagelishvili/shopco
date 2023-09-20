@@ -580,6 +580,10 @@ video {
   position: relative;
 }
 
+.left-0 {
+  left: 0px;
+}
+
 .right-5 {
   right: 1.25rem;
 }
@@ -598,6 +602,10 @@ video {
 
 .z-10 {
   z-index: 10;
+}
+
+.z-50 {
+  z-index: 50;
 }
 
 .mx-auto {
@@ -750,6 +758,10 @@ video {
   width: 100%;
 }
 
+.w-screen {
+  width: 100vw;
+}
+
 .flex-shrink-0 {
   flex-shrink: 0;
 }
@@ -869,6 +881,10 @@ video {
   border-bottom-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.bg-\[\#000000aa\] {
+  background-color: #000000aa;
+}
+
 .bg-\[\#F2F0F1\] {
   --tw-bg-opacity: 1;
   background-color: rgb(242 240 241 / var(--tw-bg-opacity));
@@ -909,6 +925,10 @@ video {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .p-8 {
@@ -1070,6 +1090,10 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.underline {
+  text-decoration-line: underline;
+}
+
 .opacity-60 {
   opacity: 0.6;
 }
@@ -1080,6 +1104,12 @@ video {
 
 .opacity-80 {
   opacity: 0.8;
+}
+
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .transition-all {
@@ -1106,8 +1136,7 @@ video {
   padding: 0 !important;
 }
 
-#email-input:focus,
-#search-bar:focus {
+input:focus {
   outline: none !important;
 }
 
@@ -1441,14 +1470,14 @@ video {
     letter-spacing: 0.1em;
   }
 
-  .xl\:transition-colors {
-    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  .xl\:transition-all {
+    transition-property: all;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
 
-  .xl\:transition-all {
-    transition-property: all;
+  .xl\:transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
   }
@@ -1463,13 +1492,13 @@ video {
     background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   }
 
-  .xl\:hover\:text-white:hover {
-    --tw-text-opacity: 1;
-    color: rgb(255 255 255 / var(--tw-text-opacity));
-  }
-
   .xl\:hover\:text-black:hover {
     --tw-text-opacity: 1;
     color: rgb(0 0 0 / var(--tw-text-opacity));
+  }
+
+  .xl\:hover\:text-white:hover {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
   }
 }

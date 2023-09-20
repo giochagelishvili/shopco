@@ -14,8 +14,7 @@
     padding: 0 !important;
 }
 
-#email-input:focus,
-#search-bar:focus {
+input:focus {
     outline: none !important;
 }
 

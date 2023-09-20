@@ -6,7 +6,7 @@ include("dbh.classes.php");
 class Product extends Dbh
 {
     // Select products from given table
-    private function get_product(string $listing = "", int $limit = 10, int $id = null)
+    private function get_product(string $listing = "", int $limit = 12, int $id = null)
     {
         // If listing was not provided
         if ($listing != "") {
@@ -69,7 +69,7 @@ class Product extends Dbh
     }
 
     // Display products to page
-    public function display_product(string $listing = "", bool $carousel = false, int $limit = 10, int $id = null, bool $return = false)
+    public function display_product(string $listing = "", bool $carousel = false, int $limit = 12, int $id = null, bool $return = false)
     {
         // Select products from the database
         $products = $this->get_product($listing, $limit, $id);
@@ -164,6 +164,7 @@ class Product extends Dbh
         return [$breadcrumbTrail, $lastSegment];
     }
 
+    // Get product details from the database
     public function get_product_details($product_id)
     {
         // Create and prepare SQL query
@@ -182,6 +183,7 @@ class Product extends Dbh
         return $product_details;
     }
 
+    // Get similar category products from the database
     public function get_similar_products($category, $id)
     {
         // Create and prepare SQL query
