@@ -181,4 +181,22 @@ class Product extends Dbh
 
         return $product_details;
     }
+
+    public function get_similar_products($category, $id)
+    {
+        // Create and prepare SQL query
+        $sql = "SELECT * FROM products WHERE category = ? AND id <> ? LIMIT 5";
+        $stmt = $this->connect()->prepare($sql);
+
+        // Execute query
+        if (!$stmt->execute([$category, $id])) {
+            $stmt = null;
+            header("location: ../index.php");
+            exit();
+        }
+
+        $similar_products = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $similar_products;
+    }
 }

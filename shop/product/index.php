@@ -48,6 +48,9 @@ if (!isset($_GET['id'])) {
 
                     // Get product details
                     $product_details = $product_obj->get_product_details($id);
+
+                    // Get similar products
+                    $similar_products = $product_obj->get_similar_products($category, $id);
                 }
                 ?>
 
@@ -220,6 +223,47 @@ if (!isset($_GET['id'])) {
                         <div>
                             <h1 class="font-bebas font-bold text-5xl text-center">YOU MIGHT ALSO LIKE</h1>
                         </div>
+                        <div class="flex items-center gap-4 overflow-x-scroll my-8">
+                            <?php
+                            foreach ($similar_products as $similar_product) {
+                                $product_id = $similar_product["id"]; // Product ID
+                                $product_images = explode('/', $similar_product['product_img']); // Product images array (in case of product having several images)
+                                $product_name = $similar_product["product_name"]; // Product name
+                                $product_rating = $similar_product["product_rating"]; // Product rating in float value (e.g. 4.5)
+                                $product_price = $similar_product["product_price"]; // Product price in float value (e.g. 120, 118.5)
+
+                                // Create carousel product container
+                                echo "<a href='/shopco/shop/product/?id=$product_id' class='flex-shrink-0 w-3/5 product-container xl:flex-shrink transition-all hover:scale-105 cursor-pointer'>";
+                                echo "<div>";
+                                echo "<img src='/shopco/uploads/product_images/" . "$product_images[0]' alt='product image'>"; // Product image
+                                echo "<h1 class='font-raleway font-semibold mt-2'>$product_name</h1>"; // Product name
+                                echo "<div class='rating-div flex items-center gap-1'>$product_rating</div>"; // Product rating
+                                echo "</div>";
+                                echo "<h1 class='font-raleway font-bold text-3xl mt-3'>$$product_price</h1>"; // Product price
+                                echo "</a>";
+                            }
+                            ?>
+                        </div>
+                    </div>
+
+                    <div class="bg-black mt-12 flex flex-col items-center justify-center gap-4 p-8 rounded-3xl xl:m-0 xl:w-1/3">
+                        <h1 class="font-bebas font-semibold text-white text-5xl ">
+                            STAY UP TO DATE <br>
+                            ABOUT OUR <br>
+                            LATEST OFFERS
+                        </h1>
+
+                        <form action="" class="w-full">
+                            <div class="bg-white flex items-center gap-2 py-1 pl-4 rounded-full">
+                                <span class="material-symbols-outlined">
+                                    mail
+                                </span>
+                                <input type="email" name="email-input" id="email-input" placeholder="Enter your email address" class="py-3" />
+                            </div>
+                            <div class="flex items-center">
+                                <button type="submit" class="w-full font-raleway font-semibold text-center text-md py-3 rounded-full bg-white mt-4 transition-all hover:text-white hover:bg-green-600">Subscribe to newsletter</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
