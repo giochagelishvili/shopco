@@ -39,7 +39,8 @@ $(document).ready(function () {
         });
 
         // Display rating in numbers (e.g. 4.5/5)
-        $(this).append(rating + "/5");
+        var numericRating = "<div class='flex items-center'><span>" + rating + "</span><span>/</span><span>5</span></div>";
+        $(this).append(numericRating);
     });
 
     // Customer index variable for feedbacks
@@ -108,6 +109,53 @@ $(document).ready(function () {
                 $(this).append(rating + "/5");
             });
         });
+    });
+
+    $('.secondary-img').on('click', function () {
+        var src = $(this).attr('src');
+        $('.main-img').fadeOut(150, function () {
+            $(this).attr('src', src);
+            $(this).fadeIn(150);
+        });
+    });
+
+    $('.color-container:first').find('.tick-mark').css('display', 'block');
+
+    $('.color-container').on('click', function () {
+        $('.color-container').find('.tick-mark').css('display', 'none');
+        $(this).find('.tick-mark').css('display', 'block');
+    });
+
+    $('.size-container').find('.size-btn:first').css({
+        background: '#000000',
+        color: '#FFFFFF'
+    });
+
+    $('.size-btn').on('click', function () {
+        $('.size-btn').css({
+            background: '#e5e7eb',
+            color: '#000000'
+        });
+        $(this).css({
+            background: '#000000',
+            color: '#FFFFFF'
+        });
+    });
+
+    $('.minus-btn').on('click', function () {
+        var quantity = parseInt($('.quantity').text());
+
+        if (quantity > 1) {
+            quantity -= 1;
+        }
+
+        $('.quantity').text(quantity);
+    });
+
+    $('.plus-btn').on('click', function () {
+        var quantity = parseInt($('.quantity').text());
+        quantity += 1;
+        $('.quantity').text(quantity);
     });
 
     // Fetchs data from JSON file according to given index and displays it on the page

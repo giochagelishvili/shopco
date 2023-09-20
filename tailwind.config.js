@@ -4,7 +4,8 @@ module.exports = {
     "./shop/**/*.{html,js,php}",
     "./inc/**/*.{html,js,php}",
     "./classes/**/*.{html,js,php}",
-    "./shop/products/**/*.{html,js,php}"
+    "./shop/products/**/*.{html,js,php}",
+    "./shop/product/**/*.{html,js,php}"
   ],
   theme: {
     fontFamily: {

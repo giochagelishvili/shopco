@@ -69,7 +69,7 @@ class Product extends Dbh
     public function display_product(string $listing = "", bool $carousel = false, int $limit = 10, int $id = null, bool $return = false)
     {
         // Select products from the database
-        $products = $this->get_product($listing, $limit);
+        $products = $this->get_product($listing, $limit, $id);
 
         if ($return) {
             return $products;
@@ -77,7 +77,7 @@ class Product extends Dbh
             // Iterate over products
             foreach ($products as $product) {
                 $product_id = $product["id"];
-                $product_img = $product["product_img"]; // Product image
+                $product_images = explode('/', $product['product_img']);
                 $product_name = $product["product_name"]; // Product name
                 $product_rating = $product["product_rating"]; // Product rating in float value (e.g. 4.5)
                 $product_price = $product["product_price"]; // Product price in float value (e.g. 120, 118.5)
@@ -93,7 +93,7 @@ class Product extends Dbh
                 }
 
                 echo "<div>";
-                echo "<img src='/shopco/uploads/" . "$product_listing/$product_img' alt='product image'>"; // Product image
+                echo "<img src='/shopco/uploads/product_images/" . "$product_images[0]' alt='product image'>"; // Product image
                 echo "<h1 class='font-raleway font-semibold mt-2'>$product_name</h1>"; // Product name
                 echo "<div class='rating-div flex items-center gap-1'>$product_rating</div>"; // Product rating
                 echo "</div>";
