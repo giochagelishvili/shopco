@@ -8,7 +8,9 @@ class Product extends Dbh
     // Select products from given table
     private function get_product(string $listing = "", int $limit = 10, int $id = null)
     {
+        // If listing was not provided
         if ($listing != "") {
+            // If id was not provided
             if ($id == null) {
                 // Create and prepare SQL query
                 $sql = "SELECT * FROM products WHERE listing = ? LIMIT $limit";
@@ -33,6 +35,7 @@ class Product extends Dbh
                 }
             }
         } else {
+            // If ID was not provided
             if ($id == null) {
                 // Create and prepare SQL query
                 $sql = "SELECT * FROM products LIMIT $limit";
@@ -71,24 +74,24 @@ class Product extends Dbh
         // Select products from the database
         $products = $this->get_product($listing, $limit, $id);
 
+        // If return = true
         if ($return) {
-            return $products;
+            return $products; // Return products array
         } else {
             // Iterate over products
             foreach ($products as $product) {
-                $product_id = $product["id"];
-                $product_images = explode('/', $product['product_img']);
+                $product_id = $product["id"]; // Product ID
+                $product_images = explode('/', $product['product_img']); // Product images array (in case of product having several images)
                 $product_name = $product["product_name"]; // Product name
                 $product_rating = $product["product_rating"]; // Product rating in float value (e.g. 4.5)
                 $product_price = $product["product_price"]; // Product price in float value (e.g. 120, 118.5)
-                $gender = $product["gender"];
-                $category = $product["category"];
-                $product_listing = $product["listing"];
 
-                // Product container div
+                // If products have to be displayed as carousel
                 if ($carousel) {
+                    // Create carousel product container
                     echo "<a href='/shopco/shop/product/?id=$product_id' class='flex-shrink-0 w-3/5 product-container xl:flex-shrink transition-all hover:scale-105 cursor-pointer'>";
                 } else {
+                    // Create normal product container
                     echo "<a href='/shopco/shop/product/?id=$product_id' class='product-container flex flex-col justify-between xl:flex-shrink transition-all hover:scale-105 cursor-pointer'>";
                 }
 
@@ -103,6 +106,7 @@ class Product extends Dbh
         }
     }
 
+    // Creates breadcrumb navigation
     public function breadcrumbs(array $crumbs = [])
     {
         // Get the current URL
@@ -125,6 +129,7 @@ class Product extends Dbh
         // Flag to track if we have reached the "shop" part
         $reachedShop = false;
 
+        // Current segment user's looking at
         $lastSegment = "";
 
         // Loop through the URL segments to build the breadcrumb trail
@@ -135,9 +140,10 @@ class Product extends Dbh
                 continue;
             }
 
-
+            // Add segment to breadcrumb trail 
             $breadcrumbTrail .= ' > <a href="/shopco/shop/' . $segment . '">' . ucfirst($segment) . '</a>';
 
+            // Update current segment
             $lastSegment = $segment;
         }
 
@@ -150,6 +156,7 @@ class Product extends Dbh
             $breadcrumbTrail .= ' > <a href="/shopco/shop/products?category=' . $category . '">' . ucwords(str_replace('_', ' ', $category)) . '</a>';
         }
 
+        // Add manual crumbs if provided
         foreach ($crumbs as $crumb) {
             $breadcrumbTrail .= ' > <a href="/shopco/shop/products?category=' . $crumb . '">' . ucfirst($crumb) . '</a>';
         }

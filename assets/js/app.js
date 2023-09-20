@@ -61,9 +61,12 @@ $(document).ready(function () {
         updateFeedback(customerIndex);
     });
 
+    // Product show limit default
     var limit = 10;
 
+    // Add click event listener to show more button
     $('.show-more-btn').on('click', function () {
+        // Increase product show limit by 10
         limit += 10;
 
         // Get the current URL
@@ -93,6 +96,7 @@ $(document).ready(function () {
             }
         }
 
+        // Load products according to new given limit
         $('.products-container').load('../../inc/products.controller.php', { limit: limit, category: category }, function () {
             // Iterate over rating divs
             $(".rating-div").each(function () {
@@ -111,50 +115,71 @@ $(document).ready(function () {
         });
     });
 
+    // Add click event listener to secondary images
     $('.secondary-img').on('click', function () {
+        // Get the source of clicked image
         var src = $(this).attr('src');
+
+        // Replace the source of main image with the source of clicked image
         $('.main-img').fadeOut(150, function () {
             $(this).attr('src', src);
-            $(this).fadeIn(150);
+            $(this).fadeIn(150); // Animate fade in
         });
     });
 
+    // Choose product's first color by default
     $('.color-container:first').find('.tick-mark').css('display', 'block');
 
+    // Add click event listener to color container (the actual color icon is treated as container)
     $('.color-container').on('click', function () {
-        $('.color-container').find('.tick-mark').css('display', 'none');
-        $(this).find('.tick-mark').css('display', 'block');
+        $('.color-container').find('.tick-mark').css('display', 'none'); // Hide check mark for every color
+        $(this).find('.tick-mark').css('display', 'block'); // Show check mark on chosen (clicked) color
     });
 
+    // Choose product's first size by default
     $('.size-container').find('.size-btn:first').css({
         background: '#000000',
         color: '#FFFFFF'
     });
 
+    // Add click event listener to size button
     $('.size-btn').on('click', function () {
+        // Unchoose every size
         $('.size-btn').css({
             background: '#e5e7eb',
             color: '#000000'
         });
+
+        // Choose the clicked size
         $(this).css({
             background: '#000000',
             color: '#FFFFFF'
         });
     });
 
+    // Add click event listener to minus button
     $('.minus-btn').on('click', function () {
+        // Select current quantity and turn into integer
         var quantity = parseInt($('.quantity').text());
 
+        // If quantity is greater than 1 decrease it by one
         if (quantity > 1) {
             quantity -= 1;
         }
 
+        // Update quantity on the page
         $('.quantity').text(quantity);
     });
 
+    // Add click event listener to plus button
     $('.plus-btn').on('click', function () {
+        // Select current quantity and turn into integer
         var quantity = parseInt($('.quantity').text());
+
+        // Increase quantity by one
         quantity += 1;
+
+        // Update quantity on the page
         $('.quantity').text(quantity);
     });
 
