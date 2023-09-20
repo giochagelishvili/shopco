@@ -43,3 +43,8 @@
 .secondary-images-container::-webkit-scrollbar {
     width: 0;
 }
+
+.size-active {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+}

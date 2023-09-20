@@ -45,6 +45,7 @@ if (!isset($_GET['id'])) {
                     $listing = $product[0]['listing']; // Product listing (New arrivals, top selling etc.)
                     $colors = explode('/', $product[0]['colors']); // Product colors
                     $sizes = explode('/', $product[0]['sizes']); // Product sizes
+                    $product_description = $product[0]['description']; // Product description
 
                     // Get product details
                     $product_details = $product_obj->get_product_details($id);
@@ -64,10 +65,10 @@ if (!isset($_GET['id'])) {
                     <!-- Product image and product info container -->
                     <div class="xl:flex xl:items-center xl:justify-start gap-6">
                         <!-- This div contains images of the product -->
-                        <div class="img-container xl:flex xl:flex-row-reverse xl:items-center xl:justify-start xl:h-[400px] xl:gap-4">
+                        <div class="img-container xl:flex xl:flex-row-reverse xl:items-center xl:justify-start xl:h-[400px] xl:gap-4 xl:w-1/2">
                             <!-- Load main image -->
                             <div>
-                                <img class="main-img" src=<?php echo "/shopco/uploads/product_images/" . $product_images[0] ?> alt="product image">
+                                <img class="main-img w-full h-[400px]" src=<?php echo "/shopco/uploads/product_images/" . $product_images[0] ?> alt="product image">
                             </div>
 
                             <!-- Secondary images container -->
@@ -90,8 +91,14 @@ if (!isset($_GET['id'])) {
                                 </h1>
                             </div>
 
+                            <div class="hidden xl:block my-1">
+                                <p class="font-raleway opacity-70">
+                                    <?php echo $product_description ?>
+                                </p>
+                            </div>
+
                             <!-- This div contains rating of the product -->
-                            <div class="rating-div flex items-center gap-2">
+                            <div class="rating-div flex items-center gap-2 xl:my-1">
                                 <?php echo $product_rating ?>
                             </div>
 
@@ -101,7 +108,7 @@ if (!isset($_GET['id'])) {
                             </div>
 
                             <!-- Divider line -->
-                            <hr class="my-6 xl:my-4">
+                            <hr class="my-6 xl:my-2">
 
                             <!-- This div contains colors for selection -->
                             <div>
@@ -123,7 +130,7 @@ if (!isset($_GET['id'])) {
                             </div>
 
                             <!-- Divider line -->
-                            <hr class="my-6 xl:my-4">
+                            <hr class="my-6 xl:my-2">
 
                             <!-- This div contains size for selection -->
                             <div>
@@ -134,14 +141,14 @@ if (!isset($_GET['id'])) {
                                     <?php
                                     // Loop through sizes and display them on the page
                                     foreach ($sizes as $size) {
-                                        echo "<button class='bg-gray-200 py-2 px-5 rounded-full font-raleway size-btn'>$size</button>";
+                                        echo "<button class='bg-gray-200 py-2 px-5 rounded-full font-raleway size-btn xl:transition-colors xl:hover:bg-black xl:hover:text-white'>$size</button>";
                                     }
                                     ?>
                                 </div>
                             </div>
 
                             <!-- Divider line -->
-                            <hr class="my-6 xl:my-4">
+                            <hr class="my-6 xl:my-2">
 
                             <!-- This div contains quantity and add to cart buttons -->
                             <div class="flex items-center gap-4">
@@ -164,7 +171,7 @@ if (!isset($_GET['id'])) {
                                 <!-- Add to Cart button container -->
                                 <div class="w-full">
                                     <!-- Add to Cart button -->
-                                    <button class='bg-black text-white py-3 w-full rounded-full font-raleway size-btn'>Add to Cart</button>
+                                    <button class='bg-black border border-black text-white py-3 w-full rounded-full font-raleway font-semibold xl:transition-all xl:hover:bg-white xl:hover:text-black'>Add to Cart</button>
                                 </div>
                             </div>
                         </div>

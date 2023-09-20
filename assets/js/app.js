@@ -136,25 +136,10 @@ $(document).ready(function () {
         $(this).find('.tick-mark').css('display', 'block'); // Show check mark on chosen (clicked) color
     });
 
-    // Choose product's first size by default
-    $('.size-container').find('.size-btn:first').css({
-        background: '#000000',
-        color: '#FFFFFF'
-    });
-
     // Add click event listener to size button
     $('.size-btn').on('click', function () {
-        // Unchoose every size
-        $('.size-btn').css({
-            background: '#e5e7eb',
-            color: '#000000'
-        });
-
-        // Choose the clicked size
-        $(this).css({
-            background: '#000000',
-            color: '#FFFFFF'
-        });
+        $('.size-btn').removeClass('size-active');
+        $(this).addClass('size-active');
     });
 
     // Add click event listener to minus button
