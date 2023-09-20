@@ -172,12 +172,23 @@ $(document).ready(function () {
 
     $('.account-btn').on('click', function (event) {
         event.stopPropagation(); // Stop event propagation
-        $('.user-form').fadeIn(150);
-        $('body').css({
-            width: '100vw',
-            height: '100vh',
-            overflow: 'hidden'
-        })
+        if (window.innerWidth >= 1280) {
+            $('.sign-up-form').css('display', 'flex');
+            $('.login-form').css('display', 'flex');
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+        } else {
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+        }
         formVisible = true;
     });
 
