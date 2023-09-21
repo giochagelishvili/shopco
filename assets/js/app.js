@@ -51,13 +51,14 @@ $(document).ready(function () {
 
     // Check if there are errors in the URL parameters
     const urlParams = new URLSearchParams(window.location.search);
-    const errors = urlParams.get('errors');
+    const signupErrors = urlParams.get('signuperrors');
+    const loginErrors = urlParams.get('loginerrors');
     const login = urlParams.get('login');
 
-    if (errors) {
+    if (signupErrors) {
         // Split and display errors within the signup form
-        const errorMessages = decodeURIComponent(errors).split(",");
-        const errorList = $('.error-list');
+        const errorMessages = decodeURIComponent(signupErrors).split(",");
+        const errorList = $('.signup-error-list');
         $.each(errorMessages, function (index, errorMessage) {
             const errorLi = $('<li>').text(errorMessage);
             errorList.append(errorLi);
@@ -76,6 +77,34 @@ $(document).ready(function () {
         } else {
             $('.login-form').css('display', 'none');
             $('.sign-up-form').css('display', 'block');
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+            formVisible = true;
+        }
+    }
+
+    if (loginErrors) {
+        // Split and display errors within the signup form
+        const errorMessages = decodeURIComponent(loginErrors).split(",");
+        const errorList = $('.login-error-list');
+        $.each(errorMessages, function (index, errorMessage) {
+            const errorLi = $('<li>').text(errorMessage);
+            errorList.append(errorLi);
+        });
+
+        if (window.innerWidth >= 1280) {
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+            formVisible = true;
+        } else {
             $('.user-form').fadeIn(150);
             $('body').css({
                 width: '100vw',

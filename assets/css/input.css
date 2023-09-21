@@ -53,6 +53,7 @@ body {
     overflow-x: hidden;
 }
 
-.error-list li {
+.signup-error-list li,
+.login-error-list li {
     list-style: disc;
 }

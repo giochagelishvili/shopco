@@ -89,8 +89,14 @@
                                 <span class="material-symbols-outlined">
                                     lock
                                 </span>
-                                <input type="password" name="password" id="password-input" placeholder="Password" class="w-full">
+                                <input type="password" name="login-password" id="password-input" placeholder="Password" class="w-full">
                             </div>
+                        </div>
+
+                        <div class="error-container">
+                            <ul class="login-error-list pl-5 text-[#cc0000]">
+
+                            </ul>
                         </div>
 
                         <!-- FORGOT PASSWORD LINK -->
@@ -136,7 +142,7 @@
                         </div>
 
                         <div class="error-container">
-                            <ul class="error-list pl-5 text-[#cc0000]">
+                            <ul class="signup-error-list pl-5 text-[#cc0000]">
 
                             </ul>
                         </div>

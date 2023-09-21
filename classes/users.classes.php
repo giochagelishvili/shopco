@@ -78,6 +78,57 @@ class User extends Dbh
         return $user;
     }
 
+    public function check_email($email)
+    {
+        $sql = "SELECT * FROM users WHERE email = ?;";
+        $stmt = $this->connect()->prepare($sql);
+
+        if (!$stmt->execute([$email])) {
+            $stmt = null;
+            header("location: /shopco/shop");
+            exit();
+        }
+
+        $email = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($email) === 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public function authorize_user($email, $password)
+    {
+        $sql = "SELECT * FROM users WHERE email = ?";
+        $stmt = $this->connect()->prepare($sql);
+
+        if (!$stmt->execute([$email])) {
+            $stmt = null;
+            header("location: /shopco/shop");
+            exit();
+        }
+
+        $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if (count($user) === 0) {
+            $error = "User with this email does not exist.";
+            header("Location: /shopco/shop/?loginerrors=$error");
+            exit();
+        }
+
+        if (password_verify($password, $user[0]['password'])) {
+            session_start();
+            $_SESSION['user_id'] = $user[0]['id'];
+
+            header("location: /shopco/profile");
+        } else {
+            $error = "User with this email does not exist.";
+            header("Location: /shopco/shop/?loginerrors=$error");
+            exit();
+        }
+    }
+
     private function hash_password($password)
     {
         return password_hash($password, PASSWORD_BCRYPT);

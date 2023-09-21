@@ -4,7 +4,11 @@ include("../classes/dbh.classes.php");
 include("../classes/users.classes.php");
 
 if (isset($_POST['login-submit-btn'])) {
-    echo "login";
+    $email = htmlspecialchars($_POST['login-email']);
+    $password = $_POST['login-password'];
+
+    $user = new User();
+    $user->authorize_user($email, $password);
 } elseif (isset($_POST['signup-submit-btn'])) {
     $first_name = $_POST['first-name'];
     $last_name = $_POST['last-name'];
@@ -39,7 +43,7 @@ if (isset($_POST['login-submit-btn'])) {
     if (!empty($errors_array)) {
         // Convert the array of errors into a string using a comma as separator
         $error_string = implode(",", $errors_array);
-        header("Location: /shopco/shop/?errors=$error_string");
+        header("Location: /shopco/shop/?signuperrors=$error_string");
         exit();
     }
 
@@ -78,6 +82,12 @@ function validate_email($email)
 
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         array_push($errors_array, "Invalid email address.");
+    }
+
+    $user = new User();
+
+    if (!$user->check_email($email)) {
+        array_push($errors_array, "Email already registered.");
     }
 
     return $errors_array;

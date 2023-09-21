@@ -762,6 +762,10 @@ video {
   width: 90%;
 }
 
+.w-\[90vw\] {
+  width: 90vw;
+}
+
 .w-\[95vw\] {
   width: 95vw;
 }
@@ -772,10 +776,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-\[90vw\] {
-  width: 90vw;
 }
 
 .flex-shrink-0 {
@@ -1221,7 +1221,8 @@ body {
   overflow-x: hidden;
 }
 
-.error-list li {
+.signup-error-list li,
+.login-error-list li {
   list-style: disc;
 }
 
@@ -1313,10 +1314,6 @@ body {
 
   .xl\:\!h-full {
     height: 100% !important;
-  }
-
-  .xl\:h-\[100\%\] {
-    height: 100%;
   }
 
   .xl\:h-\[400px\] {
@@ -1482,16 +1479,16 @@ body {
     padding: 0px;
   }
 
+  .xl\:p-10 {
+    padding: 2.5rem;
+  }
+
   .xl\:p-6 {
     padding: 1.5rem;
   }
 
   .xl\:p-8 {
     padding: 2rem;
-  }
-
-  .xl\:p-10 {
-    padding: 2.5rem;
   }
 
   .xl\:px-24 {
