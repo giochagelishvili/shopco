@@ -64,55 +64,110 @@
 
     <div class="hidden w-screen h-screen absolute z-50 top-0 left-0 bg-[#000000aa] user-form  box-border">
         <div class="flex items-center justify-center w-full h-full box-border ">
-            <div class="w-3/4 bg-white p-6 rounded-2xl form-container xl:flex xl:items-start xl:justify-between xl:p-0 overflow-hidden ">
-                <div class="login-form xl:w-1/2 xl:p-6 xl:flex xl:flex-col xl:items-center ">
+            <div class="w-[90vw] max-h-[90vh] bg-white p-6 rounded-2xl form-container xl:w-auto xl:flex xl:items-start xl:justify-between xl:p-0 overflow-x-hidden">
+                <!-- LOGIN FORM CONTAINER -->
+                <div class="login-form xl:p-10 xl:flex xl:flex-col xl:items-center">
                     <h1 class="font-bebas font-semibold text-3xl text-center tracking-widest">
-                        Please Log In
+                        Log In
                     </h1>
-                    <form class="w-full mt-4 xl:w-2/3 " action="">
+                    <h2 class="font-raleway opacity-70 text-center">Please enter your username and password</h2>
+
+                    <!-- LOGIN FORM -->
+                    <form class="w-full mt-4 flex flex-col gap-4" action="/shopco/inc/users.controller.php" method="post">
+                        <!-- INPUT CONTAINER -->
                         <div class="flex flex-col items-center gap-3">
+                            <!-- EMAIL INPUT -->
                             <div class="flex items-center w-full gap-2 border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                                 <span class="material-symbols-outlined">
-                                    person
+                                    mail
                                 </span>
-                                <input type="text" name="" id="" placeholder="Username">
+                                <input type="email" name="login-email" id="login-email-input" placeholder="Email" class="w-full">
                             </div>
+
+                            <!-- PASSWORD INPUT -->
                             <div class="flex items-center w-full gap-2 border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                                 <span class="material-symbols-outlined">
                                     lock
                                 </span>
-                                <input type="password" name="" id="" placeholder="Password">
+                                <input type="password" name="password" id="password-input" placeholder="Password" class="w-full">
                             </div>
                         </div>
-                        <button type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold mt-4">Log In</button>
+
+                        <!-- FORGOT PASSWORD LINK -->
+                        <a href="#" class="font-raleway opacity-75 pl-1 underline">Forgot password?</a>
+
+                        <!-- LOGIN BUTTON -->
+                        <button name="login-submit-btn" type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold">Log In</button>
                     </form>
-                    <div class="mt-4 flex flex-col items-center xl:hidden">
+
+                    <!-- CREATE ACCOUNT CONTAINER -->
+                    <div class="mt-4 flex flex-col items-center">
                         <h2 class="font-raleway text-center text-lg">
                             Not a member yet?
                         </h2>
-                        <span class="register-btn underline">Create Account</span>
+                        <span class="register-btn underline cursor-pointer">Create Account</span>
                     </div>
                 </div>
 
-                <div class="sign-up-form hidden xl:w-1/2 xl:bg-black xl:p-6 xl:flex xl:flex-col xl:items-center ">
+                <!-- SIGN UP FORM CONTAINER -->
+                <div class="sign-up-form hidden xl:bg-black xl:p-6 flex-col items-center">
                     <h1 class="font-bebas font-semibold text-3xl text-center tracking-widest xl:text-white">
                         Register for FREE
                     </h1>
-                    <form class="w-full mt-4 xl:w-2/3 " action="">
+
+                    <!-- SIGN UP FORM -->
+                    <form class="w-full h-full mt-4 xl:w-2/3 flex flex-col gap-2" action="/shopco/inc/users.controller.php" method="post">
+                        <!-- INPUT CONTAINER -->
                         <div class="flex flex-col items-center gap-3">
-                            <input required type="text" name="" id="" placeholder="First Name" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
-                            <input required type="text" name="" id="" placeholder="Last Name" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
-                            <input required type="email" name="" id="" placeholder="Email" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
-                            <input required type="password" name="" id="" placeholder="Password" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
-                            <input required type="password" name="" id="" placeholder="Confirm Password" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
+                            <!-- First Name Input -->
+                            <input required type="text" name="first-name" id="first-name-input" placeholder="First Name" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
+
+                            <!-- Last Name Input -->
+                            <input required type="text" name="last-name" id="last-name-input" placeholder="Last Name" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
+
+                            <!-- Email Input -->
+                            <input required type="email" name="email" id="email-input" placeholder="Email" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
+
+                            <!-- Password Input -->
+                            <input required type="password" name="password" id="sign-up-password-input" placeholder="Password" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
+
+                            <!-- Confirm Password -->
+                            <input required type="password" name="confirm-password" id="confirm-password-input" placeholder="Confirm Password" class="w-full border border-gray-300 shadow-sm py-2 px-4 rounded-full">
                         </div>
-                        <button type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold mt-4 xl:bg-white xl:text-black">Sign Up</button>
+
+                        <div class="error-container">
+                            <ul class="error-list pl-5 text-[#cc0000]">
+
+                            </ul>
+                        </div>
+
+                        <!--Terms and Conditions Container  -->
+                        <div class="flex justify-center gap-2 mt-4">
+                            <!-- Terms and Conditions Input -->
+                            <input required type="checkbox" name="terms-and-conditions" id="terms-and-conditions-checkbox">
+                            <label for="terms-and-conditions-checkbox" class="text-sm w-[90%] xl:text-white">
+                                I agree to <a href="#" class="underline">Terms and Conditions</a>
+                            </label>
+                        </div>
+
+                        <!-- Email updates container -->
+                        <div class="flex justify-center gap-2 mt-4">
+                            <!-- Subscription input -->
+                            <input type="checkbox" name="subscription" id="subscription-checkbox">
+                            <label for="subscription-checkbox" class="text-sm w-[90%] xl:text-white">
+                                I want to recieve discounts and updates on my email
+                            </label>
+                        </div>
+
+                        <button name="signup-submit-btn" type="submit" class="bg-black text-white py-2 w-full rounded-full font-raleway font-semibold mt-4 xl:bg-white xl:text-black">Sign Up</button>
                     </form>
-                    <div class="mt-4 flex flex-col items-center xl:hidden">
+
+                    <!-- Log In link container -->
+                    <div class="mt-4 flex flex-col items-center xl:text-white">
                         <h2 class="font-raleway text-center text-lg">
                             Already Registered?
                         </h2>
-                        <span class="login-btn underline">Log In</span>
+                        <span class="login-btn underline cursor-pointer">Log In</span>
                     </div>
                 </div>
             </div>

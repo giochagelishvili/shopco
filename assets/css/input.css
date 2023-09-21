@@ -39,7 +39,8 @@ input:focus {
 }
 
 /* Hide the scrollbar but allow scrolling for Webkit-based browsers */
-.secondary-images-container::-webkit-scrollbar {
+.secondary-images-container::-webkit-scrollbar,
+.form-container::-webkit-scrollbar {
     width: 0;
 }
 
@@ -50,4 +51,8 @@ input:focus {
 
 body {
     overflow-x: hidden;
+}
+
+.error-list li {
+    list-style: disc;
 }

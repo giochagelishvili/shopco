@@ -1,4 +1,90 @@
 $(document).ready(function () {
+    var formVisible = false;
+
+    $('.account-btn').on('click', function (event) {
+        event.stopPropagation(); // Stop event propagation
+        if (window.innerWidth >= 1280) {
+            $('.login-form').css('display', 'flex');
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+        } else {
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+        }
+        formVisible = true;
+    });
+
+    $('.register-btn').on('click', function () {
+        $('.login-form').fadeOut(150, function () {
+            $('.sign-up-form').css('display', 'flex');
+            $('.sign-up-form').fadeIn(150);
+        });
+    });
+
+    $('.login-btn').on('click', function () {
+        $('.sign-up-form').fadeOut(150, function () {
+            $('.login-form').fadeIn(150);
+        });
+    });
+
+    // Handle clicks outside of the .form-container
+    $(document).on('click', function (event) {
+        if (formVisible && !$(event.target).closest('.form-container').length) {
+            $('.user-form').fadeOut(150, function () {
+                $('body').css({
+                    width: 'auto',
+                    height: 'auto',
+                    overflow: 'visible'
+                });
+            });
+            formVisible = false;
+        }
+    });
+
+    // Check if there are errors in the URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const errors = urlParams.get('errors');
+
+    if (errors) {
+        // Split and display errors within the signup form
+        const errorMessages = decodeURIComponent(errors).split(",");
+        const errorList = $('.error-list');
+        $.each(errorMessages, function (index, errorMessage) {
+            const errorLi = $('<li>').text(errorMessage);
+            errorList.append(errorLi);
+        });
+
+        if (window.innerWidth >= 1280) {
+            $('.sign-up-form').css('display', 'flex');
+            $('.login-form').css('display', 'none');
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+            formVisible = true;
+        } else {
+            $('.login-form').css('display', 'none');
+            $('.sign-up-form').css('display', 'block');
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+            formVisible = true;
+        }
+    }
+
     // Open navigation menu
     $(".menu-btn").click(function () {
         // Slide navigation menu from left to right
@@ -166,56 +252,6 @@ $(document).ready(function () {
 
         // Update quantity on the page
         $('.quantity').text(quantity);
-    });
-
-    var formVisible = false;
-
-    $('.account-btn').on('click', function (event) {
-        event.stopPropagation(); // Stop event propagation
-        if (window.innerWidth >= 1280) {
-            $('.sign-up-form').css('display', 'flex');
-            $('.login-form').css('display', 'flex');
-            $('.user-form').fadeIn(150);
-            $('body').css({
-                width: '100vw',
-                height: '100vh',
-                overflow: 'hidden'
-            });
-        } else {
-            $('.user-form').fadeIn(150);
-            $('body').css({
-                width: '100vw',
-                height: '100vh',
-                overflow: 'hidden'
-            });
-        }
-        formVisible = true;
-    });
-
-    $('.register-btn').on('click', function () {
-        $('.login-form').fadeOut(150, function () {
-            $('.sign-up-form').fadeIn(150);
-        });
-    });
-
-    $('.login-btn').on('click', function () {
-        $('.sign-up-form').fadeOut(150, function () {
-            $('.login-form').fadeIn(150);
-        });
-    });
-
-    // Handle clicks outside of the .form-container
-    $(document).on('click', function (event) {
-        if (formVisible && !$(event.target).closest('.form-container').length) {
-            $('.user-form').fadeOut(150, function () {
-                $('body').css({
-                    width: 'auto',
-                    height: 'auto',
-                    overflow: 'visible'
-                });
-            });
-            formVisible = false;
-        }
     });
 
     // Fetchs data from JSON file according to given index and displays it on the page
