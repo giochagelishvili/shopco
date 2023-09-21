@@ -52,6 +52,7 @@ $(document).ready(function () {
     // Check if there are errors in the URL parameters
     const urlParams = new URLSearchParams(window.location.search);
     const errors = urlParams.get('errors');
+    const login = urlParams.get('login');
 
     if (errors) {
         // Split and display errors within the signup form
@@ -83,6 +84,26 @@ $(document).ready(function () {
             });
             formVisible = true;
         }
+    }
+
+    if (login) {
+        if (window.innerWidth >= 1280) {
+            $('.login-form').css('display', 'flex');
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+        } else {
+            $('.user-form').fadeIn(150);
+            $('body').css({
+                width: '100vw',
+                height: '100vh',
+                overflow: 'hidden'
+            });
+        }
+        formVisible = true;
     }
 
     // Open navigation menu

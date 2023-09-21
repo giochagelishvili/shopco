@@ -1,5 +1,8 @@
 <?php
 
+include("../classes/dbh.classes.php");
+include("../classes/users.classes.php");
+
 if (isset($_POST['login-submit-btn'])) {
     echo "login";
 } elseif (isset($_POST['signup-submit-btn'])) {
@@ -13,7 +16,7 @@ if (isset($_POST['login-submit-btn'])) {
 
     $name_errors = validate_name($first_name, $last_name);
     $email_errors = validate_email($email);
-    $password_errors = validate_password($password);
+    $password_errors = validate_password($password, $confirm_password);
 
     if (!empty($name_errors)) {
         foreach ($name_errors as $error) {
@@ -39,6 +42,9 @@ if (isset($_POST['login-submit-btn'])) {
         header("Location: /shopco/shop/?errors=$error_string");
         exit();
     }
+
+    $user = new User($first_name, $last_name, $email, $password);
+    $user->add_user();
 }
 
 function validate_name($first_name, $last_name)
@@ -77,7 +83,7 @@ function validate_email($email)
     return $errors_array;
 }
 
-function validate_password($password)
+function validate_password($password, $confirm_password)
 {
     // Define password validation criteria
     $min_length = 8;
@@ -91,27 +97,32 @@ function validate_password($password)
 
     // Check password length
     if (strlen($password) < $min_length) {
-        $errors_array[] = "Password must be at least {$min_length} characters long.";
+        array_push($errors_array, "Password must be at least {$min_length} characters long.");
     }
 
     // Check for uppercase letters
     if ($uppercase_required && !preg_match("/[A-Z]/", $password)) {
-        $errors_array[] = "Password must contain at least one uppercase letter.";
+        array_push($errors_array, "Password must contain at least one uppercase letter.");
     }
 
     // Check for lowercase letters
     if ($lowercase_required && !preg_match("/[a-z]/", $password)) {
-        $errors_array[] = "Password must contain at least one lowercase letter.";
+        array_push($errors_array, "Password must contain at least one lowercase letter.");
     }
 
     // Check for numbers
     if ($number_required && !preg_match("/[0-9]/", $password)) {
-        $errors_array[] = "Password must contain at least one number.";
+        array_push($errors_array, "Password must contain at least one number.");
     }
 
     // Check for special characters
     if ($special_character_required && !preg_match("/[!@#$%^&*()-_=+]/", $password)) {
-        $errors_array[] = "Password must contain at least one special character.";
+        array_push($errors_array, "Password must contain at least one special character.");
+    }
+
+    // Check for password match
+    if ($password !== $confirm_password) {
+        array_push($errors_array, "Password and confirm password do not match.");
     }
 
     return $errors_array;
